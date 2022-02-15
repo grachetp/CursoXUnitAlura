@@ -99,5 +99,21 @@ namespace Alura.LeilaoOnline.Tests
 
             Assert.Equal(valorEsperado, valorObtido);
         }
+
+        [Fact]
+        public void LeilaoSemLances()
+        {
+            //Arrange - Cenário
+            var leilao = new Leilao("Van Gogh");
+
+            //Act - Método sob teste
+            leilao.TerminaPregao();
+
+            //Assert - Resultado
+            var valorEsperado = 0;
+            var valorObtido = leilao.Ganhador.Valor;
+
+            Assert.Equal(valorEsperado, valorObtido);
+        }
     }
 }
